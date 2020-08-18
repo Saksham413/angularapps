@@ -7,6 +7,12 @@ import { Chart } from 'chart.js';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  opened=false;
+  isHero=false;
+  isChart=false;
+
+  
+
   title = 'FORM';
 
   chart = [];
@@ -59,5 +65,13 @@ export class AppComponent {
       });
       
     })
+  }
+  toggleHeroes(){
+    this.isHero=!this.isHero;
+    this.isChart=false;
+  }
+  toggleChart(){
+    this.isChart=!this.isChart;
+    this.isHero=false;
   }
 }

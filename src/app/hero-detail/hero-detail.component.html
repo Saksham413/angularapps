@@ -3,26 +3,31 @@
     <h2>{{hero.name | uppercase}} Details</h2>
     
     <div>
-      <label>name:  
-        <input [(ngModel)]="hero.name" placeholder="name"/>
-      </label>
+      <mat-form-field appearance="legacy">
+      <mat-label>name:</mat-label>  
+      <input [(ngModel)]="hero.name" matInput placeholder="Name"/>
+      </mat-form-field>
+    
+      <mat-form-field appearance="fill">
+      <mat-label>age:</mat-label>  
+      <input [(ngModel)]="hero.age" matInput placeholder="Age"/>
+      </mat-form-field>
     </div>
     <div>
-      <label>age:   
-        <input [(ngModel)]="hero.age" placeholder="age"/>
-      </label>
-    </div>
-    <div>
-      <label>date: 
+      <label> 
         <input type="date" [(ngModel)]="hero.date" id="date" name="date"/>
       </label>
     </div>
     <div>
-      <label>gender:
-        <input type="radio" [(ngModel)]="hero.gender" value="M"/>M
-        <input type="radio" [(ngModel)]="hero.gender" value="F"/>F
-        <input type="radio" [(ngModel)]="hero.gender" value="O"/>O
-      </label>
+      <label id="example-radio-group-label">Gender</label>
+      <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+        [(ngModel)]="hero.gender">
+        <mat-radio-button class="example-radio-button" *ngFor="let gender of genders" [value]="gender">
+          <div>{{gender}}</div>
+        </mat-radio-button>
+      </mat-radio-group>
     </div>
   
 </div>

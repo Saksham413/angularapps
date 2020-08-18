@@ -6,11 +6,12 @@ import { map } from 'rxjs/operators';
 })
 export class WeatherService {
 
-  constructor(private _http: HttpClient) {}
-    
+  constructor(private _http: HttpClient) { }
+
   dailyForecast() {
-      return this._http.get("https://run.mocky.io/v3/17ea7979-4d8a-4852-b669-2175945040a0")
+    return this._http.get("https://run.mocky.io/v3/12fdaa63-dcb4-43d7-8520-37886b2cc6a4")
       .pipe(map(result => result));
-    }
-  
+  }
+
+
 }
